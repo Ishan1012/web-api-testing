@@ -1,0 +1,40 @@
+.query-container {
+    position: relative;
+    padding-inline: 2vw;
+}
+
+table {
+    position: relative;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+th, td {
+    text-align: start;
+    padding: 10px;
+}
+
+button {
+    padding-inline: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #088a0e;
+    color: #fff;
+    cursor: pointer;
+}
+
+.icon2 {
+    position: relative;
+    width: 20px;
+    height: auto;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -1,0 +1,9 @@
+.foot-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #45547b;
+    padding-inline: 2rem;
+    color: white;
+}
+

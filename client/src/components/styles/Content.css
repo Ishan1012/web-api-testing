@@ -1,0 +1,50 @@
+.query-container {
+    position: relative;
+    padding-inline: 2vw;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+form {
+    top: 0;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.inner-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.left-container {
+    position: relative;
+    width: 40%;
+}
+
+.right-container {
+    position: relative;
+    width: 60%;
+}
+
+select, #name, #url, #code, #key {
+    position: relative;
+    margin-top: 5px;
+    width: 98%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}

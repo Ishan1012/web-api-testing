@@ -1,0 +1,25 @@
+.navbar-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 5%;
+}
+
+.button {
+    background-color: #b4b3b3;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    width: 15vw;
+    height: auto;
+    padding: 10px;
+    font-weight: 100;
+    font-size: 1.2rem;
+    cursor: pointer;
+}

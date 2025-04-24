@@ -1,0 +1,18 @@
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-inline: 2vw;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.icon {
+    width: 50px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
