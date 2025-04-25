@@ -34,7 +34,15 @@ This project is dedicated to testing web APIs to ensure their functionality, rel
 1. Set up API endpoints and test cases in the `config` directory.
 2. Execute the tests:
     ```bash
-    npm test
+    cd client
+    npm start
+    ```
+    
+    and
+    
+    ```bash
+    cd client
+    npm start
     ```
 3. Review the test results in the console or access the generated reports.
 
