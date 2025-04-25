@@ -1,11 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles/Content.css'
 
-const QueryForm = () => {
+const QueryForm = ({getPosts}) => {
+
+  const [loading, setLoading] = useState(false);
+
+  const postData = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.target;
+
+    if (form.name.value == '' || form.method.value == 'method' || form.url.value == '') {
+      setLoading(false);
+      alert("Please fill out all the required fields correctly.");
+    }
+    else {
+      const data = {
+        name: form.name.value,
+        method: form.method.value,
+        url: form.url.value,
+        expectedStatus: form.code.value,
+        expectedBody: form.key.value
+      }
+
+      try {
+        await fetch('http://localhost:5000/api/testcases', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        })
+
+        getPosts();
+        form.reset();
+      } catch (err) {
+        alert("Error: ", err);
+      }
+      finally {
+        setLoading(false);
+      }
+    }
+
+  }
+
   return (
+
     <div className="query-container">
       <h1>Add Test Case</h1>
-      <form action="" method="post">
+      <form onSubmit={postData}>
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" />
         <div className="inner-container">
@@ -14,8 +56,8 @@ const QueryForm = () => {
               <label htmlFor="method" id='methodName'>Method</label>
               <select name="method" id="method">
                 <option value="method">Method</option>
-                <option value="get">GET</option>
-                <option value="post">POST</option>
+                <option value="GET">GET</option>
+                <option value="POST">POST</option>
               </select>
             </div>
             <div className="code-container">
@@ -36,10 +78,14 @@ const QueryForm = () => {
             <label htmlFor="url">URL</label>
             <input type="url" name="url" id="url" />
             <label htmlFor="key">Expected JSON Key</label>
-            <input type="text" name="key" id="key" placeholder='Value'/>
+            <input type="text" name="key" id="key" placeholder='Value' />
           </div>
         </div>
+        <div className="save-container">
+          <input type="submit" value="Save" id='save' />
+        </div>
       </form>
+      {loading && <div className="loader"></div>}
     </div>
   )
 }

@@ -14,6 +14,15 @@ router.get('/', async (req, res) => {
   res.send(tests);
 });
 
+router.delete('/:id', async (req,res) => {
+  try {
+    await TestCase.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: 'Test case deleted successfully' });
+  } catch(e) {
+    res.status(500).json({ message: 'Error deleting test case' });
+  }
+})
+
 router.post('/run/:id', async (req, res) => {
   const test = await TestCase.findById(req.params.id);
   const start = Date.now();

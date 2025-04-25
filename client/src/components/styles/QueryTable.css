@@ -28,6 +28,10 @@ button {
     cursor: pointer;
 }
 
+.increase {
+    width: 30%;
+}
+
 .icon2 {
     position: relative;
     width: 20px;

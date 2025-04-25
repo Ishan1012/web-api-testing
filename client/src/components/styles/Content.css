@@ -38,7 +38,11 @@ label {
     width: 60%;
 }
 
-select, #name, #url, #code, #key {
+select,
+#name,
+#url,
+#code,
+#key {
     position: relative;
     margin-top: 5px;
     width: 98%;
@@ -47,4 +51,46 @@ select, #name, #url, #code, #key {
     border-radius: 0.3rem;
     border: 1px solid #ccc;
     font-size: 1rem;
+}
+
+#save {
+    position: relative;
+    padding-inline: 1.5rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    font-weight: 400;
+    font-size: 1rem;
+    float: right;
+    width: fit-content;
+    background-color: #1c57f9;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+#save:hover {
+    background-color: #f98e1c;
+    color: #000;
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
