@@ -14,7 +14,7 @@ const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/testbuddy';
 
 // Middleware
 app.use(cors({
-  origin: 'https://apitestbuddy.vercel.app/',
+  origin: ['http://localhost:3000', 'https://apitestbuddy.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
