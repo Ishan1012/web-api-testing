@@ -14,7 +14,7 @@ const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/testbuddy';
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://apitestbuddy.vercel.app/',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
@@ -32,7 +32,7 @@ mongoose.connect(dbURI, {
     console.log('✅ MongoDB connected');
     // Start the server *after* DB connects
     app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
+      console.log(`🚀 Server running on https://apitestbuddy.vercel.app:${PORT}/`);
     });
   })
   .catch((err) => {
