@@ -10,7 +10,7 @@ const Content = () => {
   const [tests, setTests] = useState([]);
 
   function getPosts() {
-    axios.get('http://localhost:5000/api/testcases')
+    axios.get('https://web-api-testing-production.up.railway.app/api/testcases')
       .then(res => setTests(res.data))
       .catch(err => console.error('Error fetching test cases:', err));
   }
