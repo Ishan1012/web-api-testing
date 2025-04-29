@@ -10,7 +10,7 @@ const QueryTable = ({tests,setTests,getPosts}) => {
 	const deletePost = async (test) => {
 		setLoading(true);
 		try {
-			const res = await fetch(`https://web-api-testing-production.up.railway.app/api/testcases/${test._id}`, {
+			const res = await fetch(`https://web-api-testing.onrender.com/api/testcases/${test._id}`, {
 				method: 'DELETE'
 			})
 			const data = await res.json();
@@ -25,7 +25,7 @@ const QueryTable = ({tests,setTests,getPosts}) => {
 	const postData = async (test) => {
 		setLoading(true);
 		try {
-			await fetch(`https://web-api-testing-production.up.railway.app/api/testcases/run/${test._id}`, {
+			await fetch(`https://web-api-testing.onrender.com/api/testcases/run/${test._id}`, {
 				method: 'POST'
 			})
 			

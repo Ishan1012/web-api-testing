@@ -25,7 +25,7 @@ const QueryForm = ({getPosts}) => {
       }
 
       try {
-        await fetch('https://web-api-testing-production.up.railway.app/api/testcases', {
+        await fetch('https://web-api-testing.onrender.com/api/testcases', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
