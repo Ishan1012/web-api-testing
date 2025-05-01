@@ -10,10 +10,9 @@ const QueryTable = ({tests,setTests,getPosts}) => {
 	const deletePost = async (test) => {
 		setLoading(true);
 		try {
-			const res = await fetch(`https://web-api-testing.onrender.com/api/testcases/${test._id}`, {
+			fetch(`https://web-api-testing.onrender.com/api/testcases/${test._id}`, {
 				method: 'DELETE'
 			})
-			const data = await res.json();
 			setTests((prev) => prev.filter((t) => t !== test))
 		} catch (e) {
 			console.log(e);
