@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: testbuddy-backend
-        image: ishan1012/testbuddy-backend
+        image: testbuddy-backend
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
