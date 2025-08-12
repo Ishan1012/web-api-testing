@@ -1,9 +1,6 @@
-import React, { useState } from 'react'
 import './styles/Content.css'
 
-const QueryForm = ({getPosts}) => {
-
-  const [loading, setLoading] = useState(false);
+const QueryForm = ({getPosts, setLoading}) => {
 
   const postData = async (e) => {
     e.preventDefault();
@@ -11,7 +8,7 @@ const QueryForm = ({getPosts}) => {
 
     const form = e.target;
 
-    if (form.name.value == '' || form.method.value == 'method' || form.url.value == '') {
+    if (form.name.value === '' || form.method.value === 'method' || form.url.value === '') {
       setLoading(false);
       alert("Please fill out all the required fields correctly.");
     }
@@ -34,7 +31,7 @@ const QueryForm = ({getPosts}) => {
         getPosts();
         form.reset();
       } catch (err) {
-        alert("Error: ", err);
+        console.log("Error: ", err);
       }
       finally {
         setLoading(false);
@@ -85,7 +82,6 @@ const QueryForm = ({getPosts}) => {
           <input type="submit" value="Save" id='save' />
         </div>
       </form>
-      {loading && <div className="loader"></div>}
     </div>
   )
 }

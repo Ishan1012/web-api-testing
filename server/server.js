@@ -8,6 +8,7 @@ dotenv.config(); // Load .env *before* accessing environment variables
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const IP = process.env.IP || '0.0.0.0';
 
 // Define dbURI *after* dotenv.config()
 const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/testbuddy';
@@ -31,7 +32,7 @@ mongoose.connect(dbURI, {
   .then(() => {
     console.log('✅ MongoDB connected');
     // Start the server *after* DB connects
-    app.listen(PORT, () => {
+    app.listen(PORT, IP, () => {
       console.log(`🚀 Server running on https://apitestbuddy.vercel.app:${PORT}/`);
     });
   })

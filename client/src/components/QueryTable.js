@@ -1,11 +1,6 @@
-import React, { use } from 'react'
 import './styles/QueryTable.css'
-import axios from 'axios';
-import { useState, useEffect } from 'react';
 
-const QueryTable = ({tests,setTests,getPosts}) => {
-
-	const [loading, setLoading] = useState(false);
+const QueryTable = ({tests,setTests,getPosts,loading,setLoading}) => {
 
 	const deletePost = async (test) => {
 		setLoading(true);
